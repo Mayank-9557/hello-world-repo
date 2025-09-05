@@ -1,0 +1,21 @@
+{
+  "name": "hello-world-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayank-9557/hello-world-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mayank-9557/hello-world-repo/issues"
+  },
+  "homepage": "https://github.com/Mayank-9557/hello-world-repo#readme"
+}
