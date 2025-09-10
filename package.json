@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Mayank-9557/hello-world-repo/issues"
   },
-  "homepage": "https://github.com/Mayank-9557/hello-world-repo#readme"
+  "homepage": "https://github.com/Mayank-9557/hello-world-repo#readme",
+  "devDependencies": {
+    "jest": "^30.1.3"
+  }
 }
