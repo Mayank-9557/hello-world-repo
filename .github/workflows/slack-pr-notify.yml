@@ -1,8 +1,9 @@
-name: Notify Slack on Pull Request
+name: Notify Slack on Push Request
 
 on:
-  pull_request:
-    types: [opened, reopened]
+  push:
+    branches:
+      - main
 
 jobs:
   notifySlack:
