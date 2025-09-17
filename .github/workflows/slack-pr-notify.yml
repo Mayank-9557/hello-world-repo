@@ -1,0 +1,26 @@
+name: Notify Slack on Pull Request
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  notifySlack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack message on PR open/reopen
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_PR_CHANNEL_ID: ${{ secrets.SLACK_PR_CHANNEL_ID }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_USER: ${{ github.event.pull_request.user.login }}
+        run: |
+          curl -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-type: application/json" \
+            --data '{
+              "channel": "'"$SLACK_PR_CHANNEL_ID"'",
+              "text": ":rocket: Pull Request *'"$PR_TITLE"'* opened by *'"$PR_USER"'*\n<'"$PR_URL"'|View Pull Request>"
+            }'
